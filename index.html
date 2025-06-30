@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Forge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Finance Forge</h1>
+        <nav>
+            <a href="#" id="nav-home">Home</a>
+            <a href="#" id="nav-converter">Currency Converter</a>
+            <a href="#" id="nav-quotes">Investment Quotes</a>
+            <a href="#" id="nav-dashboard" class="hidden">Dashboard</a>
+            <a href="#" id="nav-login" class="auth-link">Login</a>
+            <a href="#" id="nav-register" class="auth-link">Register</a>
+            <a href="#" id="nav-logout" class="hidden auth-link">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home-section" class="active-section">
+            <h2>Welcome to Finance Forge</h2>
+            <p>Your partner in financial management and planning. Please login or register to access our services.</p>
+            <p id="welcome-message"></p>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login-section" class="hidden">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div>
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div>
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p class="error-message" id="login-error"></p>
+            </form>
+        </section>
+
+        <!-- Register Section -->
+        <section id="register-section" class="hidden">
+            <h2>Register</h2>
+            <form id="register-form">
+                <div>
+                    <label for="register-name">Full Name:</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div>
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div>
+                    <label for="register-password">Password:</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <button type="submit">Register</button>
+                <p class="success-message" id="register-success"></p>
+                <p class="error-message" id="register-error"></p>
+            </form>
+        </section>
+
+        <!-- Currency Converter Section -->
+        <section id="converter-section" class="hidden">
+            <h2>Currency Converter</h2>
+            <form id="currency-converter-form">
+                <div>
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" value="1" required>
+                </div>
+                <div>
+                    <label for="from-currency">From:</label>
+                    <select id="from-currency">
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <div>
+                    <label for="to-currency">To:</label>
+                    <select id="to-currency">
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <button type="submit">Convert</button>
+            </form>
+            <div id="conversion-result"></div>
+            <button id="save-conversion" class="hidden">Save Conversion</button>
+        </section>
+
+        <!-- Investment Quotes Section -->
+        <section id="quotes-section" class="hidden">
+            <h2>Investment Quotes</h2>
+            <form id="investment-quote-form">
+                <div>
+                    <label for="principal">Principal Amount ($):</label>
+                    <input type="number" id="principal" value="1000" required>
+                </div>
+                <div>
+                    <label for="rate">Annual Interest Rate (%):</label>
+                    <input type="number" id="rate" value="5" step="0.1" required>
+                </div>
+                <div>
+                    <label for="years">Investment Term (Years):</label>
+                    <input type="number" id="years" value="1" required>
+                </div>
+                <button type="submit">Get Quote</button>
+            </form>
+            <div id="quote-result"></div>
+            <button id="save-quote" class="hidden">Save Quote</button>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="hidden">
+            <h2>User Dashboard</h2>
+            <div id="user-info">
+                <h3>Your Information</h3>
+                <p><strong>Name:</strong> <span id="dash-name"></span></p>
+                <p><strong>Email:</strong> <span id="dash-email"></span></p>
+            </div>
+            <div id="saved-conversions">
+                <h3>Saved Currency Conversions</h3>
+                <ul id="conversions-list"></ul>
+            </div>
+            <div id="saved-quotes">
+                <h3>Saved Investment Quotes</h3>
+                <ul id="quotes-list"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Finance Forge. For demonstration purposes only.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
